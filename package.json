@@ -2,7 +2,8 @@
     "name": "primary-services",
     "version": "1.0.4",
     "description": "A Typescript utility service library",
-    "main": "./dist/index.js",
+    "main": "./dist/PrimaryServices.js",
+    "module": "./dist/index.js",
     "type": "module",
     "types": "./dist/index.d.ts",
     "scripts": {
