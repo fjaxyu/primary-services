@@ -1,12 +1,12 @@
 {
     "name": "primary-services",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "A Typescript utility service library",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "scripts": {
         "start": "cd playground && npm start",
-        "test": "npm run test-components",
+        "test": "npm run test-services",
         "test-services": "ts-mocha -p tsconfig.json src/components/**/*.spec.ts",
         "build": "npm run build-services",
         "build-services": "webpack --display-modules",

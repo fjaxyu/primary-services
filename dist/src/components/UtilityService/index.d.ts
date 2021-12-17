@@ -110,11 +110,11 @@ export declare function extractSearchString(url: string): string;
 export declare function sortArrayOfObjectsByKey(items: any[], key: string, descending?: boolean): any[];
 export declare function roundNumber(value: any, decimals: any): number;
 export declare function formatAsCurrency(amount: number, options?: {
-    decimals?: 2;
-    round?: 2;
-    decimal?: '.';
-    thousands?: '.';
-    currencySign?: '$';
+    decimals?: number;
+    round?: number;
+    decimal?: string;
+    thousands?: string;
+    currencySign?: string;
 }): string | null;
 /**
  * @params {String} text

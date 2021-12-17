@@ -386,9 +386,11 @@ export function roundNumber(value, decimals) {
 
 
 
-export function formatAsCurrency(amount: number, options?: { decimals?: 2, round?: 2, decimal?: '.', thousands?: '.', currencySign?: '$' }): string | null {
+export function formatAsCurrency(amount: number, options?: { decimals?: number, round?: number, decimal?: string, thousands?: string, currencySign?: string }): string | null {
     let decimalCount = validateItem(options && options.decimals, 'number', 2);
+
     let round = validateItem(options && options.round, 'number', decimalCount);
+
     let decimalSymbol = validateItem(options && options.decimal, 'string', '.');
     let thousandSymbol = validateItem(options && options.thousands, 'string', ',');
     const currencySign = validateItem(options && options.currencySign, 'string', '$');
