@@ -3,11 +3,15 @@ import TypeService from '../TypeService';
 
 let fetch;
 
-if (typeof window !== 'undefined') {
-    //browser
-    fetch = require('unfetch');
-} else {
-    //server
+try {
+    if (typeof window !== 'undefined') {
+        //browser
+        fetch = require('unfetch');
+    } else {
+        //server
+        fetch = require('node-fetch').default;
+    }
+} catch (error) {
     fetch = require('node-fetch').default;
 }
 
