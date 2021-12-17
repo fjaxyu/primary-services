@@ -1,6 +1,6 @@
 demo
 tests
-src
+./src/
 .babelrc
 .mocharc.json
 webpack.config.js
