@@ -19,7 +19,11 @@
         "ajax"
     ],
     "peerDependencies": {},
-    "dependencies": {},
+    "dependencies": {
+        "@babel/plugin-transform-runtime": "^7.13.7",
+        "node-fetch": "^2.6.0",
+        "unfetch": "^4.1.0"
+    },
     "devDependencies": {
         "@babel/core": "^7.8.3",
         "@babel/plugin-proposal-object-rest-spread": "^7.8.3",

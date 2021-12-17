@@ -1,4 +1,5 @@
 import UtilityService from '../UtilityService';
+import TypeService from '../TypeService';
 
 let fetch;
 
@@ -10,7 +11,6 @@ if (typeof window !== 'undefined') {
     fetch = require('node-fetch').default;
 }
 
-const TypeService = require('./TypeService');
 
 //--==--==----==--==--==--==----==--==----==--==----==--==--==--==----==--==--//
 //PUBLIC METHODS
@@ -92,7 +92,7 @@ export async function http(options: HttpOptions): Promise<HttpResponse> {
             body = options.body;
         }
 
-        if (TypeService.isJsonItem(body)) {
+        if (TypeService.isArray(body) || TypeService.isObject(body)) {
             body = JSON.stringify(body);
         }
 

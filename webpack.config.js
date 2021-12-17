@@ -7,9 +7,10 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 
 module.exports = {
-	entry: path.resolve(__dirname, 'index.tsx'),
+	entry: path.resolve(__dirname, 'index.ts'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
+		library: 'PrimaryServices',
 		filename: 'index.js',
 		libraryTarget: 'umd',
 		globalObject: 'this'
@@ -18,7 +19,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
+				test: /\.ts?$/,
 				include: path.resolve(__dirname, 'src'),
 				// exclude: /(node_modules|build|dist|spec\.ts?$)/,
 				exclude: [
@@ -38,7 +39,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js']
+		extensions: ['.ts', '.ts', '.js']
 	},
 	plugins: [
 		new CircularDependencyPlugin({
@@ -49,17 +50,7 @@ module.exports = {
 		})
 	],
 	externals: {
-		react: {
-			commonjs: 'react',
-			commonjs2: 'react'
-		},
-		'react-dom': {
-			commonjs: 'react-dom',
-			commonjs2: 'react-dom',
-		},
-		'node-fetch': 'node-fetch',
-		'unfetch': 'unfetch',
-		'moment': 'moment',
-		'react-textarea-autosize': 'react-textarea-autosize',
+		// 'node-fetch': 'node-fetch',
+		// 'unfetch': 'unfetch',
 	}
 };
