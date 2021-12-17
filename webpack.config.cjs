@@ -39,7 +39,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: ['.ts', '.ts', '.js']
+		extensions: ['.ts', '.js']
 	},
 	plugins: [
 		new CircularDependencyPlugin({
@@ -50,7 +50,7 @@ module.exports = {
 		})
 	],
 	externals: {
-		// 'node-fetch': 'node-fetch',
-		// 'unfetch': 'unfetch',
+		'node-fetch': 'node-fetch',
+		'unfetch': 'unfetch',
 	}
 };
