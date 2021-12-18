@@ -5,7 +5,16 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 //==---=---=---=--=-=--===---====--===---=---=---=--=-=--===---====--=-===---=---=---=--=-=--===---====--=//
 
 
-let defaultConfig = {
+let config = {
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		library: {
+			type: 'umd'
+		},
+		filename: 'index.js',
+		globalObject: 'this',
+		clean: true
+	},
 	entry: path.resolve(__dirname, 'index.ts'),
 	devtool: 'source-map',
 	mode: 'production',
@@ -46,41 +55,11 @@ let defaultConfig = {
 		// 'node-fetch': 'node-fetch',
 		// 'unfetch': 'unfetch',
 	}
-}
-
-
-
-const serverConfig = {
-	output: {
-		path: path.resolve(__dirname, 'dist'),
-		library: {
-			type: 'umd'
-		},
-		filename: 'index.js',
-		globalObject: 'this'
-	},
-	...defaultConfig
 };
 
 
-const clientConfig = {
-	output: {
-		path: path.resolve(__dirname, 'dist'),
-		library: {
-			name: 'PrimaryServices',
-			type: 'umd'
-		},
-		filename: 'PrimaryServices.js',
-		globalObject: 'this'
-	},
-	...defaultConfig
-};
 
-
-module.exports = [
-	serverConfig,
-	clientConfig
-];
+module.exports = config;
 
 
 
