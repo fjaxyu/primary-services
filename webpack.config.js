@@ -9,6 +9,7 @@ let config = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		library: {
+			name: 'PrimaryServices',
 			type: 'umd'
 		},
 		filename: 'index.js',

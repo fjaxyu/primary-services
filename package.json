@@ -3,14 +3,13 @@
     "version": "1.0.7",
     "description": "A Typescript utility service library",
     "main": "./dist/index.js",
-    "type": "module",
     "types": "./dist/index.d.ts",
     "scripts": {
         "start": "cd playground && npm start",
         "test": "npm run test-services",
         "test-services": "ts-mocha -p tsconfig.json src/components/**/*.spec.ts",
         "build": "npm run build-services",
-        "build-services": "webpack --display-modules --config webpack.config.cjs",
+        "build-services": "webpack --display-modules",
         "build-patch-publish": "npm run build && npm version patch && npm publish",
         "prepublishOnly": "npm run test"
     },
